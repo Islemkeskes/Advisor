@@ -1,0 +1,131 @@
+    <div class="container">
+<div class="row">
+        <h1 class="title">{{hotel.Nom}}</h1>
+
+
+
+        <!-- RoomDetails -->
+        <div id="RoomDetails" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active"><img src="../../Content/images/photos/8.jpg" class="img-responsive" alt="slide"></div>
+                <div class="item  height-full"><img src="../../Content/images/photos/9.jpg"  class="img-responsive" alt="slide"></div>
+                <div class="item  height-full"><img src="../../Content/images/photos/10.jpg"  class="img-responsive" alt="slide"></div>
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#RoomDetails" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+            <a class="right carousel-control" href="#RoomDetails" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
+        </div>
+        <!-- RoomCarousel-->
+
+        <div class="room-features spacer">
+            <div class="row">
+                <div class="col-sm-12 col-md-8">
+
+                    <p>{{hotel.Description}}</p>
+                    <button type="submit" id="btnAnnuler" name="btnAnnuler" (click)="onSubmit()"
+                            data-toggle="modal" data-target="#myModal" class="btn btn-default">Réserver
+                    </button>
+                </div>
+
+                <div class="col-sm-3 col-md-2">
+                    <div class="size-price">Prix<span>{{hotel.Tarif}} TND</span></div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog  modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Reservation</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form name="formoDemo" style="margin-top:40px;" [formGroup]="formReservation" (ngSubmit)="save(formReservation.value,true)">
+
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8">
+
+                                <div class="form-group col-lg-4 col-md-4 col-lg-offset-1">
+                                    <label class="control-label" for="NbrePersonne">Nombre de personne</label>
+                                    <input type="number" formControlName="NbrePersonne" class="form-control" id="NbrePersonne" name="NbrePersonne">
+
+                                </div>
+
+                                <div class="form-group col-lg-4 col-md-4 col-lg-offset-1">
+
+                                    <label class="control-label" for="NbreChambre">Nombre de chambre</label>
+                                    <input type="number" [(ngModel)]="str"  formControlName="NbreChambre" class="form-control" id="NbreChambre" name="NbreChambre">
+
+
+                                </div>
+
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+
+                                <div class="form-group col-lg-4 col-md-4 col-lg-offset-1">
+
+                                    <label class="control-label">Date arrivée</label>
+                                    <input formControlName="DateArrive"
+                                           id="DateArrive" name="DateArrive"  class="form-control"
+                                            ng2-datetime-picker
+                                            date-only="true"/>
+
+                                </div>
+                                <div class="form-group col-lg-4 col-md-4 col-lg-offset-1">
+                                    <label class="control-label">Date départ</label>
+
+                                    <input id="DateDepart" name="DateDepart"
+                                               formControlName="DateDepart" class="form-control"
+                                            ng2-datetime-picker
+                                            date-only="true"/>
+
+
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <div class="form-group col-lg-4 col-md-4 col-lg-offset-1">
+                                    <span class="text-danger"
+                                          style="font-weight:bold;font-size:18px;">Prix : </span> <span
+                                        class="text-danger text-center">
+<input formControlName="TotalTarif" class="form-control" type="text" id="TotalTarif" name="TotalTarif" value ={{CalculerPrixTotal(hotel.Tarif)}}>
+                                    </span>
+                                    <br/>
+                                    <button type="submit" id="btnReserver" name="btnReserver"
+                                            class="btn btn-default  ">Valider
+                                    </button></div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+</form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+<script>
+    $('.nav-tabs a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+
+</script>

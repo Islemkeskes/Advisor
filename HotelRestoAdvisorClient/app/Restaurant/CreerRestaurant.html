@@ -1,0 +1,138 @@
+
+<form name="formDemo" style="margin-top:40px;" [formGroup]="formRestaurant" novalidate
+      (ngSubmit)="save(formRestaurant.value, formRestaurant.valid)">
+
+
+    <div class="container">
+        <div class="row">
+            <h2>Créer Restaurant</h2>
+
+            <div class="col-lg-12 col-md-12">
+
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
+                     [ngClass]="{'has-error': !formRestaurant.controls.Nom.valid, 'has-success': formRestaurant.controls.Nom.valid}"><label
+                        class="control-label" for="nom">Nom</label> <input type="text" class="form-control" id="nom"
+                                                                           name="nom" formControlName="Nom">
+                    <div *ngIf="formRestaurant.controls.Nom.invalid"><span class="text-danger"
+                                                                      *ngIf="formRestaurant.controls.Nom.errors.minlength && formRestaurant.controls.Nom.touched"> Le Nom doit être au minumum 2 caractéres </span>
+                        <span class="text-danger"
+                              *ngIf="formRestaurant.controls.Nom.errors.required && formRestaurant.controls.Nom.touched"> Le Nom est obligatoire </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
+                     [ngClass]="{'has-error': !formRestaurant.controls.Email.valid, 'has-success': formRestaurant.controls.Email.valid}">
+                    <label class="control-label" for="email">Adresse e-mail</label> <input type="text"
+                                                                                           class="form-control"
+                                                                                           id="email" name="email"
+                                                                                           formControlName="Email">
+                    <div *ngIf="formRestaurant.controls.Email.invalid"><span class="text-danger"
+                                                                        *ngIf="formRestaurant.controls.Email.errors.pattern && formRestaurant.controls.Email.touched"> L'email doit être sous la forme xxxx@xxxx.xx </span>
+                        <span class="text-danger"
+                              *ngIf="formRestaurant.controls.Email.errors.required && formRestaurant.controls.Email.touched"> L'email est obligatoire </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+                    <label class="control-label" for="description">Description</label> <input type="text"
+                                                                                              class="form-control"
+                                                                                              id="description"
+                                                                                              name="description"
+                                                                                              formControlName="Description">
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
+                     [ngClass]="{'has-error': !formRestaurant.controls.Tel.valid, 'has-success': formRestaurant.controls.Tel.valid}">
+                    <label class="control-label" for="tel">Téléphone</label> <input type="text"
+                                                                                    class="form-control"
+                                                                                    id="tel" name="tel"
+                                                                                    formControlName="Tel">
+                    <div *ngIf="formRestaurant.controls.Tel.invalid"><span class="text-danger"
+                                                                      *ngIf="formRestaurant.controls.Tel.errors.pattern && formRestaurant.controls.Tel.touched"> Le Téléphone doit comporter des nombres </span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+                    <label class="control-label" for="site">Site web</label> <input type="text"
+                                                                                    class="form-control"
+                                                                                    id="site" name="site"
+                                                                                    formControlName="Site">
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+                    <label class="control-label" for="adresse">Adresse</label> <input type="text"
+                                                                                      class="form-control"
+                                                                                      id="adresse" name="adresse"
+                                                                                      formControlName="Adresse">
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-12 col-md-12">
+                <!-- <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+                     <label class="control-label" for="categorie">Catégorie</label>
+                     <div class="dropdown">
+                         <button class="btn btn-default dropdown-toggle" id="categorie"
+                                 type="button" data-toggle="dropdown">Choisir
+                             <span class="caret"></span></button>
+                         <ul class="dropdown-menu">
+                             <li><a href="#">HTML</a></li>
+                             <li><a href="#">CSS</a></li>
+                             <li><a href="#">JavaScript</a></li>
+                         </ul>
+
+
+                     </div>
+
+                 </div>-->
+                <div class="form-group col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-1"
+                >
+                    <label class="control-label" for="categorie">Catégorie</label>  <input type="text"
+                                                                                           class="form-control"
+                                                                                           id="categorie" name="categorie"
+                                                                                           formControlName="CategorieRestaurant">
+                </div>
+                <!--  <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+                      <label class="control-label" for="ville">Ville</label>
+                      <div class="dropdown">
+                          <button class="btn btn-default dropdown-toggle" id="ville"
+                                  type="button" data-toggle="dropdown">Choisir
+                              <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                              <li><a href="#">HTML</a></li>
+                              <li><a href="#">CSS</a></li>
+                              <li><a href="#">JavaScript</a></li>
+                          </ul>
+
+
+                      </div>
+
+                  </div>-->
+                <div class="form-group col-lg-5 col-md-5 col-sm-6 col-xs-12"
+                >
+                    <label class="control-label" for="ville">Ville</label> <input type="text"
+                                                                                  class="form-control"
+                                                                                  id="ville" name="ville"
+                                                                                  formControlName="Ville">
+                </div>
+            </div>
+            <div class='text-center'>
+                <div class="btn-group">
+                    <button type="submit" name="btnValide" class="btn btn-default">Créer</button>
+                    <button type="button" id="btnAnnuler" name="btnAnnuler" class="btn btn-default">
+                        Annuler
+                    </button>
+                </div>
+            </div>
+
+            </div>
+        </div>
+</form>

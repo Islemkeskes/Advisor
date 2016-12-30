@@ -1,0 +1,25 @@
+
+<div class="container">
+    <h2>Hôtels</h2>
+
+
+    <div class="row">
+        <!-- start single blog -->
+        <div class="col-sm-6 wowload fadeInUp" *ngFor="let item of reservationHotels">
+            <div class="rooms">
+                <div class="info"><h3>{{item.IdHotel}}</h3>
+                    <div class="mu-news-single-content"><ul class="mu-meta-nav">
+
+                        <li>{{item.DateArrive}}</li>
+                        <li>{{item.DateDepart}}</li>
+
+                        <li>Prix: {{item.TotalTarif}} TND</li>
+                    </ul></div>
+                    <a [routerLink]="['/DetailHotel', item.Id]" class="btn btn-default">Details</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

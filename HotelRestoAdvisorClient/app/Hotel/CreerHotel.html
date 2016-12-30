@@ -1,0 +1,204 @@
+
+
+            <form name="formDemo" style="margin-top:40px;" [formGroup]="formHotel" novalidate
+      (ngSubmit)="save(formHotel.value, formHotel.valid)">
+
+
+    <div class="container">
+        <div class="row">
+            <h2>Créer hôtel</h2>
+
+            <div class="col-lg-12 col-md-12">
+
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
+                     [ngClass]="{'has-error': !formHotel.controls.Nom.valid, 'has-success': formHotel.controls.Nom.valid}"><label
+                        class="control-label" for="nom">Nom</label> <input type="text" class="form-control" id="nom"
+                                                                           name="nom" formControlName="Nom">
+                    <div *ngIf="formHotel.controls.Nom.invalid"><span class="text-danger"
+                                                                 *ngIf="formHotel.controls.Nom.errors.minlength && formHotel.controls.Nom.touched"> Le Nom doit être au minumum 2 caractéres </span>
+                        <span class="text-danger"
+                              *ngIf="formHotel.controls.Nom.errors.required && formHotel.controls.Nom.touched"> Le Nom est obligatoire </span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
+                     [ngClass]="{'has-error': !formHotel.controls.Email.valid, 'has-success': formHotel.controls.Email.valid}">
+                    <label class="control-label" for="email">Adresse e-mail</label> <input type="text"
+                                                                                           class="form-control"
+                                                                                           id="email" name="email"
+                                                                                           formControlName="Email">
+                    <div *ngIf="formHotel.controls.Email.invalid"><span class="text-danger"
+                                                                   *ngIf="formHotel.controls.Email.errors.pattern && formHotel.controls.Email.touched"> L'email doit être sous la forme xxxx@xxxx.xx </span>
+                        <span class="text-danger"
+                              *ngIf="formHotel.controls.Email.errors.required && formHotel.controls.Email.touched"> L'email est obligatoire </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+                    <label class="control-label" for="description">Description</label> <input type="text"
+                                                                                              class="form-control"
+                                                                                              id="description"
+                                                                                              name="description"
+                                                                                              formControlName="Description">
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
+                     [ngClass]="{'has-error': !formHotel.controls.Tel.valid, 'has-success': formHotel.controls.Tel.valid}">
+                    <label class="control-label" for="tel">Téléphone</label> <input type="text"
+                                                                                    class="form-control"
+                                                                                    id="tel" name="tel"
+                                                                                    formControlName="Tel">
+                    <div *ngIf="formHotel.controls.Tel.invalid"><span class="text-danger"
+                                                                 *ngIf="formHotel.controls.Tel.errors.pattern && formHotel.controls.Tel.touched"> Le Téléphone doit comporter des nombres </span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+                    <label class="control-label" for="site">Site web</label> <input type="text"
+                                                                                    class="form-control"
+                                                                                    id="site" name="site"
+                                                                                    formControlName="Site">
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+                    <label class="control-label" for="adresse">Adresse</label> <input type="text"
+                                                                                      class="form-control"
+                                                                                      id="adresse" name="adresse"
+                                                                                      formControlName="Adresse">
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+                    <label class="control-label" for="tarif">Tarif</label> <input type="text"
+                                                                                  class="form-control"
+                                                                                  id="tarif" name="tarif"
+                                                                                  formControlName="Tarif">
+                </div>
+
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+
+                <div class="form-group col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-1">
+                <label class="control-label" for="categorie">Catégorie</label>  <input type="text"
+                                                                              class="form-control"
+                                                                              id="categorie" name="categorie"
+                                                                              formControlName="CategorieHotel">
+                </div>
+
+                <div class="form-group col-lg-5 col-md-5 col-sm-6 col-xs-12"
+                >
+                <label class="control-label" for="ville">Ville</label> <input type="text"
+                                                                                      class="form-control"
+                                                                                      id="ville" name="ville"
+                                                                                      formControlName="Ville">
+                    </div>
+            </div>
+
+
+                        <!--<div class="col-md-4">-->
+                            <!--<form>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label for="multiple">Multiple</label>-->
+                                    <!--<input type="file" class="form-control" name="multiple" ng2FileSelect [uploader]="uploader" multiple  />-->
+                                <!--</div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label for="single">single</label>-->
+                                    <!--<input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />-->
+                                <!--</div>-->
+                            <!--</form>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-8">-->
+                            <!--<h3>File Upload with Angular 2 and Node</h3>-->
+                            <!--Queue length: {{ uploader?.queue?.length }}-->
+
+                            <!--<table class="table">-->
+                                <!--<thead>-->
+                                <!--<tr>-->
+                                    <!--<th width="50%">Name</th>-->
+                                    <!--<th>Size</th>-->
+                                    <!--<th>Progress</th>-->
+                                    <!--<th>Status</th>-->
+                                    <!--<th>Actions</th>-->
+                                <!--</tr>-->
+                                <!--</thead>-->
+                                <!--<tbody>-->
+                                <!--<tr *ngFor="let item of uploader.queue">-->
+                                    <!--<td><strong>{{ item.file.name }}</strong></td>-->
+                                    <!--<td nowrap>{{ item.file.size/1024/1024 | number:'.2' }} MB</td>-->
+                                    <!--<td>-->
+                                        <!--<div class="progress" style="margin-bottom: 0;">-->
+                                            <!--<div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-center">-->
+                                        <!--<span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>-->
+                                        <!--<span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>-->
+                                        <!--<span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>-->
+                                    <!--</td>-->
+                                    <!--<td nowrap>-->
+                                        <!--<button type="button" class="btn btn-success btn-xs"-->
+                                                <!--(click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">-->
+                                            <!--<span class="glyphicon glyphicon-upload"></span> Upload-->
+                                        <!--</button>-->
+                                        <!--<button type="button" class="btn btn-warning btn-xs"-->
+                                                <!--(click)="item.cancel()" [disabled]="!item.isUploading">-->
+                                            <!--<span class="glyphicon glyphicon-ban-circle"></span> Cancel-->
+                                        <!--</button>-->
+                                        <!--<button type="button" class="btn btn-danger btn-xs"-->
+                                                <!--(click)="item.remove()">-->
+                                            <!--<span class="glyphicon glyphicon-trash"></span> Remove-->
+                                        <!--</button>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                                <!--</tbody>-->
+                            <!--</table>-->
+
+                            <!--<div>-->
+                                <!--<div>-->
+                                    <!--Queue progress:-->
+                                    <!--<div class="progress" style="">-->
+                                        <!--<div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<button type="button" class="btn btn-success btn-s"-->
+                                        <!--(click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">-->
+                                    <!--<span class="glyphicon glyphicon-upload"></span> Upload all-->
+                                <!--</button>-->
+                                <!--<button type="button" class="btn btn-warning btn-s"-->
+                                        <!--(click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">-->
+                                    <!--<span class="glyphicon glyphicon-ban-circle"></span> Cancel all-->
+                                <!--</button>-->
+                                <!--<button type="button" class="btn btn-danger btn-s"-->
+                                        <!--(click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">-->
+                                    <!--<span class="glyphicon glyphicon-trash"></span> Remove all-->
+                                <!--</button>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+
+
+
+            <div class='text-center'>
+                <div class="btn-group">
+                    <button type="submit" name="btnValide" class="btn btn-default ">Créer</button>
+                    <button type="button" id="btnAnnuler" name="btnAnnuler" class="btn btn-default ">
+                        Annuler
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</form>

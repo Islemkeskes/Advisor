@@ -1,0 +1,25 @@
+
+<div class="container">
+    <h2>Resturant</h2>
+
+
+    <div class="row">
+        <!-- start single blog -->
+        <div class="col-sm-6 wowload fadeInUp" *ngFor="let item of restaurants">
+            <div class="rooms">
+                <img src="../../Content/images/photos/3.jpg" class="img-responsive">
+                <div class="info"><h3>{{item.Nom}}</h3>
+                    <div class="mu-news-single-content"><ul class="mu-meta-nav">
+
+                        <li>{{item.Ville}}</li>
+                        <li>{{item.Description}}</li>
+                    </ul></div>
+                    <a [routerLink]="['/DetailRestaurant', item.Id]" class="btn btn-default">Details</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

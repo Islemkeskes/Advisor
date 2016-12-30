@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Advisor</title>
+
+
+
+</head>
+
+<body id="home">
+
+
+<!-- top
+  <form class="navbar-form navbar-left newsletter" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Your Email Id Here">
+        </div>
+        <button type="submit" class="btn btn-inverse">Subscribe</button>
+    </form>
+ top -->
+
+<!-- header -->
+<nav class="navbar  navbar-default" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" [routerLink]="['/Accueil']">
+                <br/>
+                <h4 >Advisor</h4>
+              </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+                <li><a [routerLink]="['/Accueil']">Accueil</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="blog-archive.html">Hôtel <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a [routerLink]="['/Hotels']">Recherche</a></li>
+                        <li><a  *ngIf="loggedIn && utilisateur.Role==='Admin'" [routerLink]="['/CreerHotel']">Gérer</a></li>
+
+
+                    </ul>
+                </li>
+
+                         <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="blog-archive.html">Restaurant <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a [routerLink]="['/Restaurants']">Recherche</a></li>
+                        <li><a *ngIf="loggedIn && utilisateur.Role==='Admin'"  [routerLink]="['/CreerRestaurant']">Gérer</a></li>
+
+                    </ul>
+                </li>
+                <li><a [routerLink]="['/CreerUtilisateur']">Inscription</a></li>
+                <li><a [routerLink]="['/Login']">Login</a></li>
+                <li>
+
+                    <div class="top-contact-details alignright" *ngIf="loggedIn"> Bonjour {{utilisateur.Nom}}
+                        {{utilisateur.Prenom}}
+                    </div>
+                </li>
+            </ul>
+        </div><!-- Wnavbar-collapse -->
+    </div><!-- container-fluid -->
+</nav>
+<!-- header -->
+
+
+<!--</head>-->
+
+<router-outlet></router-outlet>
+
+<!-- services
+
+<div class="container">
+
+</div>
+-->
+
+<footer class="spacer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <h4>Advisor</h4>
+
+            </div>
+
+            <div class="col-sm-3">
+                <h4>Quick Links</h4>
+                <ul class="list-unstyled">
+                    <li><a [routerLink]="['/Hotels']">Hôtel</a></li>
+                    <li><a  [routerLink]="['/Restaurants']">Restaurant</a></li>
+
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4 subscribe">
+                <h4>Subscription</h4>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter email id here">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Get Notify</button>
+                    </span>
+                </div>
+                <div class="social">
+                    <a href="#"><i class="fa fa-facebook-square" data-toggle="tooltip" data-placement="top"
+                                   data-original-title="facebook"></i></a>
+                    <a href="#"><i class="fa fa-instagram" data-toggle="tooltip" data-placement="top"
+                                   data-original-title="instragram"></i></a>
+                    <a href="#"><i class="fa fa-twitter-square" data-toggle="tooltip" data-placement="top"
+                                   data-original-title="twitter"></i></a>
+                    <a href="#"><i class="fa fa-pinterest-square" data-toggle="tooltip" data-placement="top"
+                                   data-original-title="pinterest"></i></a>
+                    <a href="#"><i class="fa fa-tumblr-square" data-toggle="tooltip" data-placement="top"
+                                   data-original-title="tumblr"></i></a>
+                    <a href="#"><i class="fa fa-youtube-square" data-toggle="tooltip" data-placement="top"
+                                   data-original-title="youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+
+    <!--/.footer-bottom-->
+</footer>
+
+<div class="text-center copyright">Powered by <a href="http://thebootstrapthemes.com">thebootstrapthemes.com</a>
+</div>
+
+<a href="#home" class="toTop scroll"><i class="fa fa-angle-up"></i></a>
+
+
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title">title</h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+</div>
+
+
+</body>
+</html>

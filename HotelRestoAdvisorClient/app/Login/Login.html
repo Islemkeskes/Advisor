@@ -1,0 +1,42 @@
+
+
+        <form id="loginform" name="frmLogin" #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+            <div class="container">
+                <div class="row">
+                    <h2>Login</h2>
+
+                    <div class="col-lg-12 col-md-12">
+
+                            <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
+                                [ngClass]="{'has-error': !form.valid, 'has-success': form.valid}">
+                                <label class="control-label" for="user_name">Identifiant</label>
+                                <input class="form-control"
+                                   placeholder="Username or Email" id="user_name" name="user" autocomplete="off"
+                                   type="text"
+                                   ngModel required>
+                            </div>
+                            </div>
+                        <div class="col-lg-12 col-md-12">
+
+                                <div class="form-group col-lg-10 col-md-10 col-lg-offset-1" [ngClass]="{'has-error': !form.valid, 'has-success': form.valid}">
+                                    <label class="control-label" for="user_pwd">Mot de passe</label>
+                            <input
+                                    placeholder="Password"
+                                    id="user_pwd" class="form-control"
+                                    name="password"
+                                    type="password" ngModel
+                                    required>
+
+
+                    </div>
+                </div>
+                        <div class='text-center'>
+                            <div class="btn-group">
+                                <button type="submit"
+                                        name="Log-In" class="btn btn-default ">Log-In</button></div>
+                        </div>
+         </div>
+                </div>
+        </form>
+
